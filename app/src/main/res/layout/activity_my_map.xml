@@ -1,0 +1,65 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MyMap">
+
+    <LinearLayout
+        android:id="@+id/tabLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:background="#D3D3D3"
+        android:padding="8dp"
+        android:layout_marginTop="50dp"
+        android:layout_alignParentTop="true"
+        android:gravity="center">
+
+        <Button
+            android:id="@+id/btnHomeTown"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:tag="0"
+            android:onClick="changeMarker"
+            android:text="Cidade Natal" />
+
+        <Button
+            android:id="@+id/btnDPI"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:tag="1"
+            android:onClick="changeMarker"
+            android:text="DPI/UFV" />
+
+        <Button
+            android:id="@+id/btnVicosa"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:tag="2"
+            android:onClick="changeMarker"
+            android:text="Casa em VIÇOSA" />
+    </LinearLayout>
+
+    <fragment
+        android:id="@+id/map"
+        android:name="com.google.android.gms.maps.MapFragment"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:layout_below="@id/tabLayout"
+        android:layout_above="@id/btnLoc"/>
+
+    <Button
+        android:id="@+id/btnLoc"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:onClick="currentLocation"
+        android:layout_marginBottom="30dp"
+        android:text="Localização" />
+</RelativeLayout>
